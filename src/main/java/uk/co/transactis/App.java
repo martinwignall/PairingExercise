@@ -9,7 +9,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Configuration
 @ComponentScan
@@ -19,18 +21,22 @@ public class App
     public static void main( String[] args ) {
         App app = new App();
 
-        List<Integer> squareAndTriangleQuantities=new ArrayList<Integer>();
-        squareAndTriangleQuantities.add(3);
-        squareAndTriangleQuantities.add(2);
+        Map<ShapeType, Integer> shapeMap = new HashMap<>();
+        
+        shapeMap.put(ShapeType.SQUARE, 6);
+        shapeMap.put(ShapeType.TRIANGLE, 100);
 
-        System.out.println("TOTAL AREA=" + app.getTotalArea(squareAndTriangleQuantities));
+        System.out.println("TOTAL AREA=" + app.getTotalArea(shapeMap));
+        
+        
     }
 
-    private float getTotalArea(List<Integer> squareAndTriangleQuantities) {
+    private float getTotalArea(Map<ShapeType, Integer> shapeMap) {
         ApplicationContext context = new AnnotationConfigApplicationContext(App.class);
         AreaCalculatorService areaCalculatorService = context.getBean(AreaCalculatorService.class);
-
-        return areaCalculatorService.calculateTotalArea(squareAndTriangleQuantities);
+        
+        
+        return areaCalculatorService.calculateTotalArea(shapeMap);
     }
 
     @Bean

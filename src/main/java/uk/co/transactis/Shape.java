@@ -8,5 +8,5 @@ package uk.co.transactis;
  * To change this template use File | Settings | File Templates.
  */
 public interface Shape {
-    public float area();
+    public float getArea();
 }

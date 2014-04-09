@@ -15,7 +15,7 @@ public class Square implements Shape {
     public Square() {
     }
 
-    public float area() {
-        return 0;
+    public float getArea() {
+        return SQUARE_HEIGHT * SQUARE_WIDTH;
     }
 }

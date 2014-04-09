@@ -17,6 +17,6 @@ public class TriangleTest {
     @Test
     public void shouldReturnAreaOfTriangleIfAsked() {
         Triangle triangle = new Triangle();
-        assertThat(triangle.area(), equalTo(50f));
+        assertThat(triangle.getArea(), equalTo(50f));
     }
 }

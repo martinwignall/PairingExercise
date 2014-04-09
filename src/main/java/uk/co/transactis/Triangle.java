@@ -9,10 +9,10 @@ package uk.co.transactis;
  */
 public class Triangle implements Shape {
 
-    private int TRIANGLE_WIDTH=10;
-    private int TRIANGLE_HEIGHT=10;
+    private float TRIANGLE_WIDTH=10f;
+    private float TRIANGLE_HEIGHT=10f;
 
-    public float area() {
-        return 0;
+    public float getArea() {
+        return 0.5f * TRIANGLE_HEIGHT * TRIANGLE_WIDTH;
     }
 }

@@ -17,6 +17,6 @@ public class SquareTest {
     @Test
     public void shouldReturnAreaOfSquareIfRequested() {
         Square square = new Square();
-        assertThat(square.area(), equalTo(100f));
+        assertThat(square.getArea(), equalTo(100f));
     }
 }

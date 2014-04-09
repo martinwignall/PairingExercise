@@ -21,8 +21,8 @@ public class AreaCalculatorService {
 
     @Autowired ShapeFactory shapeFactory;
 
-    public float calculateTotalArea(Map<ShapeType, Integer> shapeMap) {
-    	float areaSum = 0;
+    public double calculateTotalArea(Map<ShapeType, Integer> shapeMap) {
+    	double areaSum = 0;
     	
     	for (Map.Entry<ShapeType, Integer> entry :  shapeMap.entrySet()) {
     		areaSum += shapeFactory.makeShape(entry.getKey()).getArea() * entry.getValue();

@@ -1,17 +1,13 @@
 package uk.co.transactis;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @Configuration
 @ComponentScan
@@ -23,15 +19,16 @@ public class App
 
         Map<ShapeType, Integer> shapeMap = new HashMap<>();
         
-        shapeMap.put(ShapeType.SQUARE, 6);
-        shapeMap.put(ShapeType.TRIANGLE, 100);
+        shapeMap.put(ShapeType.SQUARE, 8);
+        shapeMap.put(ShapeType.TRIANGLE, 4);
+        shapeMap.put(ShapeType.CIRCLE, 5);
 
         System.out.println("TOTAL AREA=" + app.getTotalArea(shapeMap));
         
         
     }
 
-    private float getTotalArea(Map<ShapeType, Integer> shapeMap) {
+    private double getTotalArea(Map<ShapeType, Integer> shapeMap) {
         ApplicationContext context = new AnnotationConfigApplicationContext(App.class);
         AreaCalculatorService areaCalculatorService = context.getBean(AreaCalculatorService.class);
         

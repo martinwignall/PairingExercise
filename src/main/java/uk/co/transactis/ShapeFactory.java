@@ -30,45 +30,44 @@ public class ShapeFactory {
     
     private static enum SHAPE_FACTORY_HELPER {
     	TRIANGLE(ShapeType.TRIANGLE) {
-			@Override
-			Shape createNewShape() {
-				return new Triangle();
-			}
-		},    
+		@Override
+		Shape createNewShape() {
+			return new Triangle();
+		}
+	},    
     	SQUARE(ShapeType.SQUARE) {
-			@Override
-			Shape createNewShape() {
-				return new Square();
+		@Override
+		Shape createNewShape() {
+			return new Square();
+		}
+	},
+	CIRCLE(ShapeType.CIRCLE) 	{
+		@Override
+		Shape createNewShape() {
+			return new Circle();
+		}
+	};
+	
+	private ShapeType shapeType;
+	
+	
+	private SHAPE_FACTORY_HELPER(ShapeType shapeType) {
+		this.shapeType = shapeType;
+	}
+	
+	static SHAPE_FACTORY_HELPER from(ShapeType shapeType) {
+		for (SHAPE_FACTORY_HELPER shape : values()) {
+			if (shapeType == shape.shapeType) {
+				return shape;
 			}
-		},
-		CIRCLE(ShapeType.CIRCLE) 	{
-			@Override
-			Shape createNewShape() {
-				throw new UnsupportedOperationException();
-			}
-		};
-		
-		private ShapeType shapeType;
-		
-		
-		
-		private SHAPE_FACTORY_HELPER(ShapeType shapeType) {
-			this.shapeType = shapeType;
 		}
 		
-		static SHAPE_FACTORY_HELPER from(ShapeType shapeType) {
-			for (SHAPE_FACTORY_HELPER shape : values()) {
-				if (shapeType == shape.shapeType) {
-					return shape;
-				}
-			}
-			
-			return null;
-		}
+		return null;
+	}
 
 
 
-		abstract Shape createNewShape();
+	abstract Shape createNewShape();
 		
     }
 }

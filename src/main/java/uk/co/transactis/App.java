@@ -23,7 +23,7 @@ public class App
         
     }
 
-    float getTotalArea(Map<ShapeType, Integer> shapeMap) {
+    double getTotalArea(Map<ShapeType, Integer> shapeMap) {
         ApplicationContext context = new AnnotationConfigApplicationContext(App.class);
         AreaCalculatorService areaCalculatorService = context.getBean(AreaCalculatorService.class);
         

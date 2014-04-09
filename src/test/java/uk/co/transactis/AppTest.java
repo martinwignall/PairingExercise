@@ -9,12 +9,12 @@ import org.junit.Test;
 public class AppTest {
 
 	@Test
-	public void test() {
+	public void shouldCalculateAreaForReadMeFileProblem() {
 		App app = new App();
 		
-		float totalArea = app.getTotalArea(null);
+		double totalArea = app.getTotalArea(null);
 		
-		assertThat(totalArea, is(3435f));
+		assertThat(totalArea , is(1392.699089050293d));
 		
 	}
 
